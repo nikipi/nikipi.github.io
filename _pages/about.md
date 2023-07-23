@@ -16,11 +16,11 @@ I am also working with [The Leverhulme Centre for the Future of Intelligence](ht
 ## Fun Facts
 ---
 
-**1.** 🌍 I've lived in 4 continents and 6 countries and counting.
+🌍 I've lived in 4 continents and 6 countries and counting.
 
-**2.** 👠 I used to run a fashion blog with 800,000 followers.
+👠 I used to run a fashion blog with 800,000 followers.
 
-**3.** 👩🏻‍💼 I once achieved my dream of working for the UN, but made a pivot to work on AI.
+👩🏻‍💼 I once achieved my dream of working for the UN, but made a pivot to work on AI.
 
 ---
 
