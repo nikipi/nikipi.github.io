@@ -6,11 +6,11 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-locale                   : "en-US"
+locale                   : "en-UK"
 title                    : "Yulu Pi"
 title_separator          : "-"
 name                     : &name "Yulu Pi"
-description              : &description "Responsible AI<br/>Visualization<br/>Public Policy"
+description              : &description "Responsible AI<br/>Visualization<br/>Public Policy<br/>HCI"
 url                      : https://nikipi.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "nikipi/nikipi.github.io"
