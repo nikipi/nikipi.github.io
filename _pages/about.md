@@ -14,7 +14,6 @@ Hi! I’m Yulu Pi (all my friends call me Niki). I am currently a PhD candidate 
 I am also working with [The Leverhulme Centre for the Future of Intelligence](http://lcfi.ac.uk/people/yulu-pi/) at university of Cambridge on the The In-Depth EU AI Act Toolkit project. We want to design a toolkit for small and medium-sized company to ensure ethical and compliance considerations from the stage of project ideation to product deployment. 
 
 ## Fun Facts
----
 
 🌍 I've lived in 4 continents and 6 countries and counting.
 
