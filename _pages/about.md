@@ -11,7 +11,7 @@ redirect_from:
 
 Hi! I’m Yulu Pi (all my friends call me Niki). I am currently a PhD candidate from [University of Warwick](https://warwick.ac.uk/fac/cross_fac/cim/people/yulu-pi/). I worked in several governmental and international organizations before the start of my Phd.  My research centers on enhancing the transparency and fairness of AI by leveraging concepts and techniques from Human-Computer Interaction (HCI) and cognitive science literature. My work extends beyond technical and design issues to consider how explainability can be incorporated into governance.
 
-[I work at the intersection of HCI, Responsible AI and Public Policy](https://github.com/nikipi/nikipi.github.io/blob/master/files/Purple%20Illustration%20Venn%20Diagram.pdf)
+![I work at the intersection of HCI, Responsible AI and Public Policy](https://github.com/nikipi/nikipi.github.io/blob/master/files/Purple%20Illustration%20Venn%20Diagram.pdf)
 
 I am also working with [The Leverhulme Centre for the Future of Intelligence](http://lcfi.ac.uk/people/yulu-pi/) at university of Cambridge on the The In-Depth EU AI Act Toolkit project. We want to design a toolkit for small and medium-sized company to ensure ethical and compliance considerations from the stage of project ideation to product deployment. 
 
