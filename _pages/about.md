@@ -14,12 +14,12 @@ Hi! I’m Yulu Pi (all my friends call me Niki). I am currently a PhD candidate 
 I am also working with [The Leverhulme Centre for the Future of Intelligence](http://lcfi.ac.uk/people/yulu-pi/) at university of Cambridge on the The In-Depth EU AI Act Toolkit project. We want to design a toolkit for small and medium-sized company to ensure ethical and compliance considerations from the stage of project ideation to product deployment. 
 
 ## PUBLICATIONS
-**Papers:**
+*Papers:*
 1. [Pi, Y. (2021). Machine learning in Governments: Benefits, Challenges and Future Directions. JeDEM - EJournal of EDemocracy and Open Government, 13(1), 203–219.](https://doi.org/10.29379/jedem.v13i1.625)
 2. [Pi, Y. (2023). INFEATURE: An Interactive Feature-Based-Explanation Framework for Non-technical Users. In: Degen, H., Ntoa, S. (eds) Artificial Intelligence in HCI. HCII 2023. Lecture Notes in Computer Science, vol 14050. Springer, Cham.](https://doi.org/10.1007/978-3-031-35891-3_16)
 3. [Yulu Pi, & Cagatay Turkay. (2022, November 1). A Multidisciplinary Literature Review and Framework For AI-Assisted Policymaking. Data for Policy 2022.](https://doi.org/10.5281/zenodo.7270367)
 
-**Think Tank Reports:**
+*Think Tank Reports:*
 1. [The four fundamentals of trustworthy AI.](https://book.yunzhan365.com/njpo/sdpb/mobile/index.html)
 2. [Explainability of AI: Progress and Trends in Global Governance.](https://book.yunzhan365.com/njpo/pbcu/mobile/index.html)
 3. [Comparison Of U.S. And EU Approaches to The Regulation of Artificial Intelligence.](https://book.yunzhan365.com/njpo/sdmf/mobile/index.html)
