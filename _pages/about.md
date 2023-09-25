@@ -36,6 +36,8 @@ I am also working with [The Leverhulme Centre for the Future of Intelligence](ht
 
 👩🏻‍💼 I once achieved my dream of working for the UN, but made a pivot to work on AI.
 
+📚 [Find what I am reading](https://aspiring-steed-7fc.notion.site/Niki-s-Personal-life-9c4417f28a32460b9a8a94ce39b5ffc0)
+
 ---
 
 Feel free to ask me more about any of these facts when we meet! Always eager to meet and bond with fellow enthusiasts.
