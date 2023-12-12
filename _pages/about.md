@@ -17,7 +17,7 @@ I am also working with [The Leverhulme Centre for the Future of Intelligence](ht
 *Papers:*
 1. [Pi, Y. (2021). Machine learning in Governments: Benefits, Challenges and Future Directions. JeDEM - EJournal of EDemocracy and Open Government, 13(1), 203–219.](https://doi.org/10.29379/jedem.v13i1.625)
 2. [Pi, Y. (2023). INFEATURE: An Interactive Feature-Based-Explanation Framework for Non-technical Users. In: Degen, H., Ntoa, S. (eds) Artificial Intelligence in HCI. HCII 2023. Lecture Notes in Computer Science, vol 14050. Springer, Cham.](https://doi.org/10.1007/978-3-031-35891-3_16)
-3. [Pi, Y. (2023) Missing Value Chain in Generative AI Governance: China as an example, NeurIPS 2023 Workshop on Regulatable ML] (https://openreview.net/forum?id=4s3F2Kf9KL)
+3. [Pi, Y. (2023) Missing Value Chain in Generative AI Governance: China as an example, NeurIPS 2023 Workshop on Regulatable ML](https://openreview.net/forum?id=4s3F2Kf9KL)
 4. [Yulu Pi, & Cagatay Turkay. (2022, November 1). A Multidisciplinary Literature Review and Framework For AI-Assisted Policymaking. Data for Policy 2022.](https://doi.org/10.5281/zenodo.7270367)
 
 *Think Tank Reports:*
