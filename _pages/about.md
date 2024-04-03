@@ -20,14 +20,6 @@ I am also working with [The Leverhulme Centre for the Future of Intelligence](ht
 3. [Pi, Y. (2023) Missing Value Chain in Generative AI Governance: China as an example, NeurIPS 2023 Workshop on Regulatable ML](https://openreview.net/forum?id=4s3F2Kf9KL)
 4. [Yulu Pi, & Cagatay Turkay. (2022, November 1). A Multidisciplinary Literature Review and Framework For AI-Assisted Policymaking. Data for Policy 2022.](https://doi.org/10.5281/zenodo.7270367)
 
-*Think Tank Reports:*
-1. [The four fundamentals of trustworthy AI.](https://book.yunzhan365.com/njpo/sdpb/mobile/index.html)
-2. [Explainability of AI: Progress and Trends in Global Governance.](https://book.yunzhan365.com/njpo/pbcu/mobile/index.html)
-3. [Comparison Of U.S. And EU Approaches to The Regulation of Artificial Intelligence.](https://book.yunzhan365.com/njpo/sdmf/mobile/index.html)
-4. [人工智能与美国国家安全：保持领先，遏制他国.](https://www.secrss.com/articles/43502)
-5. [Liability rules: EU regulation of artificial intelligence goes a step forward.](https://book.yunzhan365.com/njpo/ehow/mobile/index.html)
-6. The Age of Artificial Intelligence: Wealth for Everyone? With Friedrich-Ebert-Stiftung and Intellisia Institute.
-
 
 ### Fun Facts
 
