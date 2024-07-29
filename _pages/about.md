@@ -25,7 +25,7 @@ I will also start as an Enrichment fellow with community award at [The Alan Turi
 *Think Tank Reports:*
 1. [The four fundamentals of trustworthy AI](https://book.yunzhan365.com/njpo/sdpb/mobile/index.html)
 2. [Explainability of AI: Progress and Trends in Global Governance](https://book.yunzhan365.com/njpo/pbcu/mobile/index.html)
-3. [Comparison Of U.S. And EU Approaches to The Regulation of Artificial Intelligence])(https://book.yunzhan365.com/njpo/sdmf/mobile/index.html)
+3. [Comparison Of U.S. And EU Approaches to The Regulation of Artificial Intelligence](https://book.yunzhan365.com/njpo/sdmf/mobile/index.html)
 4. [Liability rules: EU regulation of artificial intelligence goes a step forward](https://book.yunzhan365.com/njpo/ehow/mobile/index.html)
 5. The Age of Artificial Intelligence: Wealth for Everyone? With Friedrich-Ebert-Stiftung and Intellisia Institute.
 
