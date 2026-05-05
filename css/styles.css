@@ -376,7 +376,7 @@ img { max-width: 100%; height: auto; display: block; }
   bottom: 32%;
   left: 13%;
   transform: rotate(10deg);
-  opacity: .8;
+  opacity: .75;
   z-index: 10;
 }
 
