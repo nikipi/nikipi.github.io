@@ -1,0 +1,1396 @@
+/* ================================================
+   SCRAPBOOK JOURNAL — nikipi.github.io
+   Dot-grid paper, pins, stickers, doodles,
+   hand-drawn feel, scattered layout
+   ================================================ */
+
+:root {
+  --page:       #f8f5ef;
+  --page-warm:  #f3ede4;
+  --dot:        #d0c8be;
+  --ink:        #3a3330;
+  --ink-light:  #8a7e74;
+  --pink:       #f2a0ae;
+  --pink-hot:   #e8506e;
+  --yellow:     #fde68a;
+  --mint:       #a8e6cf;
+  --sky:        #b4d7ff;
+  --lilac:      #d4b8e8;
+  --peach:      #fdc8a0;
+  --pin-red:    #d93030;
+  --tape-pink:  rgba(242,160,174,.45);
+  --tape-mint:  rgba(168,230,207,.45);
+  --tape-yellow:rgba(253,230,138,.45);
+  --tape-lilac: rgba(212,184,232,.45);
+  --mono:       'Special Elite', 'Courier New', monospace;
+  --hand:       'Caveat', cursive;
+  --heading:    'Shadows Into Light Two', cursive;
+  --body:       'Nunito', sans-serif;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; overflow: hidden; }
+
+body {
+  font-family: var(--body);
+  color: var(--ink);
+  line-height: 1.6;
+  background-color: var(--page);
+  background-image:
+    radial-gradient(circle, var(--dot) 1.2px, transparent 1.2px),
+    linear-gradient(to bottom, rgba(0,0,0,.01) 1px, transparent 1px);
+  background-size: 20px 20px, 100% 20px;
+}
+
+::selection { background: var(--pink); color: #fff; }
+a { color: var(--pink-hot); transition: color .2s; }
+a:hover { color: #c03050; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* ================================================
+   SCRAPBOOK — Full viewport, centered profile
+   ================================================ */
+.scrapbook {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow:
+    inset 10px 0 30px -10px rgba(0,0,0,.06),
+    inset -10px 0 30px -10px rgba(0,0,0,.06),
+    inset 0 10px 30px -10px rgba(0,0,0,.04),
+    inset 0 -10px 30px -10px rgba(0,0,0,.04);
+}
+
+/* Notebook spiral holes along left edge */
+.scrapbook::before {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; left: 14px;
+  width: 22px;
+  background-image:
+    radial-gradient(circle, #c8c0b5 6px, transparent 6px),
+    radial-gradient(circle, rgba(0,0,0,.12) 7px, transparent 7px);
+  background-size: 22px 48px, 22px 48px;
+  background-position: 0 24px, 0 24px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Faint vertical margin line — double red lines like a real notebook */
+.scrapbook::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; left: 40px;
+  width: 3px;
+  background:
+    linear-gradient(to right, rgba(220,80,80,.15) 1px, transparent 1px, transparent 2px, rgba(220,80,80,.1) 2px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ================================================
+   DOODLE DECORATIONS (pure CSS)
+   ================================================ */
+.doodle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  font-family: var(--hand);
+  opacity: .35;
+  color: var(--ink);
+  animation: doodle-drift 6s ease-in-out infinite alternate;
+}
+@keyframes doodle-drift {
+  0%   { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-4px) rotate(5deg); }
+}
+.doodle:nth-child(2n)   { animation-delay: -1s; animation-duration: 7s; }
+.doodle:nth-child(3n)   { animation-delay: -2.5s; animation-duration: 5s; }
+.doodle:nth-child(4n+1) { animation-delay: -3.2s; animation-duration: 8s; }
+
+.doodle-star { font-size: 2rem; }
+.doodle-star::after { content: '\2726'; }
+.doodle-heart { font-size: 1.8rem; color: var(--pink-hot); opacity: .35; }
+.doodle-heart::after { content: '\2665'; }
+.doodle-sparkle { font-size: 1.4rem; }
+.doodle-sparkle::after { content: '\2727'; }
+.doodle-flower { font-size: 1.6rem; color: var(--pink); opacity: .4; }
+.doodle-flower::after { content: '\2740'; }
+
+/* ================================================
+   WASHI TAPE DECORATIONS (top-right corner)
+   ================================================ */
+.tape-deco {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: 1px;
+  background-image: repeating-linear-gradient(
+    45deg, transparent, transparent 3px,
+    rgba(255,255,255,.3) 3px, rgba(255,255,255,.3) 6px
+  );
+}
+.tape-deco-1 {
+  top: 2%;
+  right: 14%;
+  width: 90px;
+  height: 22px;
+  background-color: rgba(180,215,255,.5);
+  transform: rotate(-8deg);
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+.tape-deco-2 {
+  top: 2.8%;
+  right: 7%;
+  width: 75px;
+  height: 22px;
+  background-color: rgba(253,200,160,.55);
+  transform: rotate(5deg);
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+.tape-deco-3 {
+  bottom: 3%;
+  left: 30%;
+  width: 80px;
+  height: 20px;
+  background-color: rgba(212,184,232,.4);
+  transform: rotate(-6deg);
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+.tape-deco-4 {
+  top: 50%;
+  left: 1%;
+  width: 65px;
+  height: 20px;
+  background-color: rgba(168,230,207,.45);
+  transform: rotate(12deg);
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+
+/* ================================================
+   SCRIBBLES — hand-drawn marks
+   ================================================ */
+.scribble {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  opacity: .2;
+}
+.scribble-swirl {
+  width: 50px; height: 50px;
+  border: 2.5px solid var(--ink);
+  border-radius: 50% 60% 40% 70%;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  transform: rotate(25deg);
+}
+.scribble-arrow {
+  width: 0; height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 14px solid var(--ink);
+  opacity: .15;
+  transform: rotate(-20deg);
+}
+.scribble-arrow::after {
+  content: '';
+  position: absolute;
+  top: 14px; left: -2px;
+  width: 3px; height: 30px;
+  background: var(--ink);
+  border-radius: 2px;
+  transform: rotate(2deg);
+}
+.scribble-underline {
+  width: 60px;
+  height: 0;
+  border-bottom: 2.5px wavy var(--pink-hot);
+  opacity: .2;
+  transform: rotate(-2deg);
+}
+
+/* ================================================
+   PAPERCLIPS
+   ================================================ */
+.paperclip {
+  position: absolute;
+  pointer-events: none;
+  z-index: 7;
+  width: 16px;
+  height: 44px;
+  border: 2.5px solid #b0a898;
+  border-radius: 8px 8px 0 0;
+  border-bottom: none;
+  opacity: .4;
+}
+.paperclip::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 3px;
+  width: 8px;
+  height: 28px;
+  border: 2.5px solid #b0a898;
+  border-radius: 0 0 6px 6px;
+  border-top: none;
+}
+.paperclip-1 {
+  top: 6%;
+  left: 26%;
+  transform: rotate(15deg);
+}
+.paperclip-2 {
+  bottom: 14%;
+  right: 28%;
+  transform: rotate(-8deg);
+  opacity: .3;
+}
+
+/* ================================================
+   STAMP / POSTMARK — circular faded stamp
+   ================================================ */
+.stamp {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+.stamp-1 {
+  top: 8%;
+  right: 32%;
+  width: 60px;
+  height: 60px;
+  border: 2.5px solid var(--pink-hot);
+  border-radius: 50%;
+  opacity: .1;
+  transform: rotate(12deg);
+}
+.stamp-1::before {
+  content: '';
+  position: absolute;
+  top: 4px; left: 4px; right: 4px; bottom: 4px;
+  border: 1.5px solid var(--pink-hot);
+  border-radius: 50%;
+}
+.stamp-1::after {
+  content: '\2605';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  color: var(--pink-hot);
+}
+
+/* ================================================
+   PEN BORDER — hand-drawn page edge
+   ================================================ */
+.pen-border {
+  position: absolute;
+  inset: 6px;
+  border: 2px dashed rgba(58,51,48,.04);
+  border-radius: 3px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ================================================
+   COFFEE RING STAIN
+   ================================================ */
+.coffee-ring {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px solid rgba(160,130,90,.06);
+  background: radial-gradient(
+    ellipse at center,
+    transparent 55%,
+    rgba(160,130,90,.04) 60%,
+    rgba(160,130,90,.06) 70%,
+    transparent 75%
+  );
+  transform: rotate(10deg);
+}
+.coffee-ring::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  border: 2px solid rgba(160,130,90,.04);
+}
+
+/* ================================================
+   INK BLOT
+   ================================================ */
+.ink-blot {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(
+    ellipse at 40% 45%,
+    rgba(58,51,48,.06) 0%,
+    rgba(58,51,48,.03) 50%,
+    transparent 70%
+  );
+  border-radius: 50% 60% 45% 55%;
+  transform: rotate(-15deg);
+}
+
+/* ================================================
+   JOURNAL DATE — handwritten year in top corner
+   ================================================ */
+.journal-date {
+  position: absolute;
+  top: 2%;
+  left: 50px;
+  font-family: var(--hand);
+  font-size: 1.1rem;
+  color: var(--ink-light);
+  opacity: .3;
+  transform: rotate(-2deg);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ================================================
+   LILY STICKER DECORATIONS
+   ================================================ */
+.lily-sticker {
+  position: absolute;
+  pointer-events: none;
+  z-index: 5;
+  filter: drop-shadow(2px 3px 6px rgba(0,0,0,.15));
+}
+
+/* Large lily — on top of cards */
+.lily-1 {
+  width: 250px;
+  height: auto;
+  bottom: 32%;
+  left: 13%;
+  transform: rotate(10deg);
+  opacity: .8;
+  z-index: 10;
+}
+
+
+/* ================================================
+   PAGE CORNER FOLD
+   ================================================ */
+.scrapbook .page-fold {
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 0; height: 0;
+}
+
+/* ================================================
+   WASHI TAPE (reusable)
+   ================================================ */
+.tape {
+  position: absolute;
+  height: 22px;
+  z-index: 4;
+  border-radius: 1px;
+  background-image: repeating-linear-gradient(
+    45deg, transparent, transparent 3px,
+    rgba(255,255,255,.3) 3px, rgba(255,255,255,.3) 6px
+  );
+}
+.tape-pink { background-color: var(--tape-pink); width: 110px; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+
+/* ---- Dotted washi tape ---- */
+.tape-dots {
+  position: absolute;
+  height: 24px;
+  z-index: 6;
+  border-radius: 1px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  opacity: .8;
+}
+.tape-dots-pink {
+  width: 110px;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  background-color: rgba(242,160,174,.5);
+  background-image: radial-gradient(circle, rgba(255,255,255,.6) 2.5px, transparent 2.5px);
+  background-size: 10px 10px;
+  background-position: 3px 5px;
+}
+.tape-dots-mint {
+  width: 90px;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(4deg);
+  background-color: rgba(168,230,207,.55);
+  background-image: radial-gradient(circle, rgba(255,255,255,.6) 2.5px, transparent 2.5px);
+  background-size: 10px 10px;
+  background-position: 3px 5px;
+}
+.tape-dots-lilac {
+  width: 85px;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  background-color: rgba(212,184,232,.55);
+  background-image: radial-gradient(circle, rgba(255,255,255,.6) 2.5px, transparent 2.5px);
+  background-size: 10px 10px;
+  background-position: 3px 5px;
+}
+
+/* Photo tape effects — diverse styles */
+.photo-tape {
+  position: absolute;
+  z-index: 6;
+  opacity: .75;
+  box-shadow: 0 1px 2px rgba(0,0,0,.06);
+}
+
+/* Main photo: two corner tapes (top-left & bottom-right) */
+.tape-corner-tl {
+  width: 60px;
+  height: 22px;
+  top: -4px;
+  left: -8px;
+  transform: rotate(-42deg);
+  background-color: rgba(242,200,160,.55);
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 3px,
+    rgba(255,255,255,.4) 3px,
+    rgba(255,255,255,.4) 5px
+  );
+  border-radius: 1px;
+}
+.tape-corner-br {
+  width: 55px;
+  height: 20px;
+  bottom: 24px;
+  right: -8px;
+  transform: rotate(-42deg);
+  background-color: rgba(242,200,160,.55);
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 3px,
+    rgba(255,255,255,.4) 3px,
+    rgba(255,255,255,.4) 5px
+  );
+  border-radius: 1px;
+}
+
+/* Cat1: striped washi tape across top */
+.tape-stripe-top {
+  width: 100px;
+  height: 22px;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotate(3deg);
+  background-color: rgba(168,215,230,.5);
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 6px,
+    rgba(255,255,255,.5) 6px,
+    rgba(255,255,255,.5) 9px
+  );
+  border-radius: 1px;
+}
+
+/* Cat2: cross tape (two small pieces forming an X) */
+.tape-cross-1 {
+  width: 50px;
+  height: 18px;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%) rotate(35deg);
+  background-color: rgba(220,180,220,.5);
+  background-image: radial-gradient(circle, rgba(255,255,255,.5) 2px, transparent 2px);
+  background-size: 8px 8px;
+  border-radius: 1px;
+}
+.tape-cross-2 {
+  width: 50px;
+  height: 18px;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-35deg);
+  background-color: rgba(220,180,220,.5);
+  background-image: radial-gradient(circle, rgba(255,255,255,.5) 2px, transparent 2px);
+  background-size: 8px 8px;
+  border-radius: 1px;
+}
+
+/* ================================================
+   PROFILE CENTER — centered in viewport
+   ================================================ */
+.profile-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+  margin-left: 40px;
+}
+
+.photos-row {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  gap: 0;
+}
+
+.photo {
+  flex-shrink: 0;
+  position: relative;
+  background: #fff;
+  box-shadow:
+    2px 3px 12px rgba(0,0,0,.13),
+    0 1px 3px rgba(0,0,0,.08);
+  transition: transform .3s;
+}
+.photo:hover { transform: scale(1.03); }
+.photo img {
+  display: block;
+  object-fit: cover;
+}
+
+.caption {
+  font-family: var(--hand);
+  font-size: 1rem;
+  text-align: center;
+  display: block;
+  padding: 6px 0 2px;
+  color: var(--ink-light);
+}
+
+.photo-main {
+  padding: 10px 10px 32px;
+  transform: rotate(-3deg);
+  z-index: 2;
+}
+.photo-main img {
+  width: 220px;
+  height: 260px;
+}
+
+.photo-cat {
+  padding: 8px 8px 28px;
+  transform: rotate(5deg);
+  margin-left: -25px;
+  margin-bottom: -15px;
+  z-index: 3;
+}
+.photo-cat img {
+  width: 140px;
+  height: 140px;
+}
+.photo-cat .caption { font-size: .9rem; }
+
+.photo-cat2 {
+  padding: 8px 8px 28px;
+  transform: rotate(-5deg);
+  margin-left: -22px;
+  margin-bottom: 45px;
+  z-index: 1;
+}
+.photo-cat2 img {
+  width: 130px;
+  height: 130px;
+}
+.photo-cat2 .caption { font-size: .9rem; }
+
+/* ---- Name card with about me ---- */
+.name-card {
+  background: #fff;
+  border-left: 4px solid var(--pink-hot);
+  padding: 1rem 1.8rem 1.2rem;
+  border-radius: 2px;
+  box-shadow:
+    2px 3px 10px rgba(0,0,0,.08),
+    0 1px 3px rgba(0,0,0,.04);
+  margin-top: -.8rem;
+  position: relative;
+  z-index: 4;
+  max-width: 680px;
+  width: 90vw;
+}
+
+.name-card h1 {
+  font-family: var(--heading);
+  font-size: 1.6rem;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.name-card .tagline {
+  font-family: var(--hand);
+  font-size: 1rem;
+  color: var(--ink-light);
+  font-style: italic;
+  margin-top: .1rem;
+}
+
+.research-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem;
+  margin-top: .4rem;
+}
+
+.tag {
+  font-family: var(--hand);
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--pink-hot);
+  background: rgba(242,160,174,.2);
+  border: 1.5px solid rgba(232,80,110,.25);
+  padding: .05rem .5rem;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.about-text {
+  margin-top: .6rem;
+  border-top: 1px dashed rgba(0,0,0,.08);
+  padding-top: .5rem;
+}
+.about-text p {
+  font-size: .8rem;
+  line-height: 1.55;
+  margin-bottom: .45rem;
+  color: var(--ink);
+}
+.about-text p:last-child { margin-bottom: 0; }
+
+.hl {
+  background: linear-gradient(180deg,
+    transparent 60%,
+    rgba(253,230,138,.5) 60%,
+    rgba(253,230,138,.5) 88%,
+    transparent 88%
+  );
+}
+
+/* ================================================
+   SECTION CARDS — square sticky notes, journal-style
+   ================================================ */
+.card {
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  height: 320px;
+  padding: 1.8rem 1.6rem 1.5rem;
+  border-radius: 2px;
+}
+
+/* Subtle paper grain on stickers */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='rgba(0,0,0,0.015)'/%3E%3Crect x='1' y='1' width='1' height='1' fill='rgba(0,0,0,0.02)'/%3E%3C/svg%3E");
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Curled corner — bigger and more visible */
+.card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 34px; height: 34px;
+  background: linear-gradient(135deg, transparent 48%, rgba(0,0,0,.04) 48%, rgba(0,0,0,.08) 100%);
+  border-radius: 0 0 2px 0;
+}
+
+/* ---- Card washi tape — for stickers without pins ---- */
+.card-tape {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 100px;
+  height: 24px;
+  z-index: 6;
+  border-radius: 1px;
+  background-image: repeating-linear-gradient(
+    45deg, transparent, transparent 3px,
+    rgba(255,255,255,.35) 3px, rgba(255,255,255,.35) 6px
+  );
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  opacity: .85;
+}
+.card-tape-mint {
+  background-color: var(--tape-mint);
+  transform: translateX(-50%) rotate(-4deg);
+  width: 110px;
+}
+.card-tape-peach {
+  background-color: rgba(253,200,160,.6);
+  transform: translateX(-60%) rotate(3deg);
+  width: 95px;
+}
+.card-tape-lilac {
+  background-color: var(--tape-lilac);
+  transform: translateX(-45%) rotate(-2deg);
+  width: 105px;
+}
+
+/* ---- Card pins — realistic pushpin with 3D dome ---- */
+.card-pin {
+  position: absolute;
+  top: 8px;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  box-shadow:
+    0 3px 7px rgba(0,0,0,.4),
+    0 1px 3px rgba(0,0,0,.25),
+    inset 0 -3px 5px rgba(0,0,0,.2),
+    inset 0 2px 3px rgba(255,255,255,.15);
+  z-index: 6;
+  border: 1px solid rgba(0,0,0,.08);
+}
+/* Highlight/glare on pin dome */
+.card-pin::before {
+  content: '';
+  position: absolute;
+  top: 5px; left: 7px;
+  width: 11px; height: 9px;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,.8) 0%, rgba(255,255,255,.2) 50%, transparent 70%);
+  border-radius: 50%;
+}
+/* Pin needle shadow on the paper */
+.card-pin::after {
+  content: '';
+  position: absolute;
+  bottom: -5px; left: 50%;
+  transform: translateX(-50%);
+  width: 6px; height: 6px;
+  background: rgba(0,0,0,.15);
+  border-radius: 50%;
+  filter: blur(2px);
+}
+
+/* ---- Per-card colors & positions (natural journal scatter) ---- */
+
+/* Research — upper left, close to edge */
+/* Gallery card (replaces research) */
+.gallery-card.card-research {
+  top: 2%;
+  left: 1%;
+  width: 380px;
+  height: 400px;
+  background: linear-gradient(145deg, #fef3c7 0%, var(--yellow) 40%, #fcd34d 100%);
+  transform: rotate(-5.5deg);
+  box-shadow:
+    3px 5px 15px rgba(0,0,0,.12),
+    1px 2px 4px rgba(0,0,0,.08),
+    -1px -1px 0 rgba(255,255,255,.5) inset;
+  position: absolute;
+  padding: 1.1rem 1rem .8rem;
+  border-radius: 3px;
+  font-family: var(--hand);
+  display: flex;
+  flex-direction: column;
+  z-index: 4;
+}
+.gallery-card .card-label {
+  font-family: var(--heading);
+  font-size: 1.5rem;
+  margin-bottom: .5rem;
+  color: var(--ink);
+}
+.gallery-slideshow {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.gallery-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+  pointer-events: none;
+}
+.gallery-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.gallery-slide a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.gallery-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,.5);
+  color: #fff;
+  font-size: .72rem;
+  font-family: var(--hand);
+  padding: 5px 24px;
+  text-align: center;
+  border-radius: 0 0 3px 3px;
+}
+.gallery-prev,
+.gallery-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,.6);
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--ink);
+  opacity: 0;
+  transition: opacity .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gallery-slideshow:hover .gallery-prev,
+.gallery-slideshow:hover .gallery-next {
+  opacity: 1;
+}
+.gallery-prev { left: 6px; }
+.gallery-next { right: 6px; }
+.gallery-prev:hover,
+.gallery-next:hover {
+  background: rgba(255,255,255,.9);
+}
+.card-research .card-pin {
+  left: 38%;
+  background: radial-gradient(circle at 38% 35%, #e8c850, #b89830);
+}
+
+/* Papers — upper right */
+.card-papers {
+  top: 5%;
+  right: 1.5%;
+  background: linear-gradient(155deg, #fce4ec 0%, var(--pink) 40%, #e88a9c 100%);
+  transform: rotate(4.5deg);
+  box-shadow:
+    3px 5px 15px rgba(0,0,0,.12),
+    1px 2px 4px rgba(0,0,0,.08),
+    -1px -1px 0 rgba(255,255,255,.5) inset;
+}
+.card-papers .card-items {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  gap: .25rem;
+}
+.card-papers .card-items li {
+  font-size: .98rem;
+  white-space: normal;
+  line-height: 1.2;
+}
+.card-papers .card-items li em {
+  font-size: .75rem;
+}
+.card-papers .card-pin {
+  right: 35%;
+  background: radial-gradient(circle at 38% 35%, #f05050, #d03030);
+}
+
+/* Talks — lower left, pulled further out */
+.card-talks {
+  bottom: 5%;
+  left: 2.5%;
+  background: linear-gradient(140deg, #dbeafe 0%, var(--sky) 40%, #93bbf0 100%);
+  transform: rotate(3.5deg);
+  box-shadow:
+    3px 5px 15px rgba(0,0,0,.12),
+    1px 2px 4px rgba(0,0,0,.08),
+    -1px -1px 0 rgba(255,255,255,.5) inset;
+}
+.card-talks .card-pin {
+  left: 42%;
+  background: radial-gradient(circle at 38% 35%, #5090d0, #3070b0);
+}
+
+/* Awards — right side, below publications sticker */
+.card-awards {
+  top: 44%;
+  right: 1.5%;
+  transform: rotate(3deg);
+  background: linear-gradient(135deg, #d1fae5 0%, var(--mint) 40%, #6ee7b7 100%);
+  box-shadow:
+    3px 5px 15px rgba(0,0,0,.12),
+    1px 2px 4px rgba(0,0,0,.08),
+    -1px -1px 0 rgba(255,255,255,.5) inset;
+}
+.card-awards .card-label {
+  font-size: 1.3rem;
+  margin-bottom: .3rem;
+}
+.card-awards .card-items {
+  gap: .3rem;
+}
+.card-awards .card-items li {
+  font-size: .88rem;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+  line-height: 1.2;
+}
+.card-awards .card-items li em {
+  display: inline;
+  font-size: .68rem;
+  margin-left: .2rem;
+}
+
+/* Fun Facts — smaller, bottom-right corner */
+.card-fun {
+  width: 220px;
+  height: 220px;
+  padding: 1.2rem 1rem 1rem;
+  bottom: 2%;
+  right: 2%;
+  background: linear-gradient(150deg, #ede4f5 0%, var(--lilac) 40%, #c09edb 100%);
+  transform: rotate(-3.5deg);
+  box-shadow:
+    3px 5px 15px rgba(0,0,0,.12),
+    1px 2px 4px rgba(0,0,0,.08),
+    -1px -1px 0 rgba(255,255,255,.5) inset;
+}
+.card-fun .card-label { font-size: 1.4rem; }
+.card-fun .card-items li { font-size: .95rem; }
+.card-fun .card-pin {
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle at 38% 35%, #c080d0, #9050a0);
+}
+
+.card-label {
+  font-family: var(--hand);
+  font-size: 1.7rem;
+  font-weight: 700;
+  font-style: italic;
+  display: block;
+  color: var(--ink);
+  margin-bottom: .6rem;
+  flex-shrink: 0;
+}
+
+/* ---- Card item lists ---- */
+.card-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  flex: 1;
+  overflow: hidden;
+}
+.card-items li {
+  font-family: var(--hand);
+  font-size: 1.1rem;
+  line-height: 1.3;
+  color: var(--ink);
+  padding-left: 1rem;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.card-items li::before {
+  content: '\00B7';
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: rgba(58,51,48,.4);
+}
+.card-items li em {
+  font-size: .9rem;
+  color: var(--ink-light);
+  font-style: normal;
+}
+
+/* Fun facts — emoji prefix, no dot */
+.card-items-fun li { padding-left: 0; }
+.card-items-fun li::before { content: none; }
+
+/* ---- See more link ---- */
+.see-more {
+  font-family: var(--hand);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--pink-hot);
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: auto;
+  padding-top: .5rem;
+  align-self: flex-end;
+  transition: color .2s;
+  background: none;
+  border: none;
+  flex-shrink: 0;
+}
+.see-more:hover {
+  color: #c03050;
+  text-decoration: underline wavy;
+}
+
+/* ================================================
+   PROFILE TOP — photo + contact side by side
+   ================================================ */
+.profile-top {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* ================================================
+   CONTACT SIDE — vertical list next to photo
+   ================================================ */
+.contact-side {
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+}
+.contact-side a {
+  font-family: var(--mono);
+  font-size: .82rem;
+  color: var(--ink-light);
+  background: #fff;
+  border: 1.5px dashed var(--dot);
+  padding: .35rem .8rem;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: all .2s;
+  white-space: nowrap;
+}
+.contact-side a:hover {
+  color: var(--pink-hot);
+  border-color: var(--pink-hot);
+  transform: translateX(2px);
+}
+
+/* ================================================
+   PANELS — Overlay on notebook paper
+   ================================================ */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(58,51,48,.35);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+}
+.backdrop.active { opacity: 1; pointer-events: auto; }
+
+.panel {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(.94);
+  width: 90%;
+  max-width: 620px;
+  max-height: 82vh;
+  background-color: #fdfbf7;
+  background-image:
+    repeating-linear-gradient(transparent, transparent 27px, rgba(0,0,0,.04) 27px, rgba(0,0,0,.04) 28px);
+  background-size: 100% 28px;
+  background-position: 0 12px;
+  border: none;
+  border-radius: 3px;
+  box-shadow:
+    4px 6px 20px rgba(0,0,0,.15),
+    0 1px 3px rgba(0,0,0,.08),
+    inset 0 0 0 1px rgba(0,0,0,.05);
+  z-index: 60;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s, transform .3s;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.panel.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+.panel-wide { max-width: 720px; }
+
+.panel::before {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 38px;
+  width: 1px;
+  background: rgba(220,80,80,.15);
+  z-index: 1;
+}
+
+.panel::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 120px;
+  height: 22px;
+  background-color: var(--tape-mint);
+  background-image: repeating-linear-gradient(
+    45deg, transparent, transparent 3px,
+    rgba(255,255,255,.3) 3px, rgba(255,255,255,.3) 6px
+  );
+  border-radius: 1px;
+  z-index: 5;
+}
+#panel-papers::after { background-color: var(--tape-pink); transform: translateX(-50%) rotate(-2.5deg); }
+#panel-talks::after  { background-color: rgba(180,215,255,.45); transform: translateX(-50%) rotate(1deg); }
+
+.panel h2 {
+  font-family: var(--heading);
+  font-size: 1.4rem;
+  color: var(--ink);
+  padding: 1rem 1.5rem .6rem 3.2rem;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.panel-note {
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: var(--ink-light);
+  padding: .3rem 1.5rem 0 3.2rem;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.panel-body {
+  padding: .8rem 1.5rem 1.5rem 3.2rem;
+  overflow-y: auto;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.panel-close {
+  position: absolute;
+  top: .6rem; right: .8rem;
+  background: none;
+  border: none;
+  color: var(--ink-light);
+  font-size: 1.5rem;
+  cursor: pointer;
+  font-family: var(--hand);
+  transition: color .2s;
+  z-index: 10;
+  line-height: 1;
+}
+.panel-close:hover { color: var(--pink-hot); }
+
+.panel-body p {
+  font-size: .92rem;
+  margin-bottom: .8rem;
+}
+.panel-body p:last-child { margin-bottom: 0; }
+
+/* Publications */
+.pub {
+  display: flex;
+  flex-direction: column;
+  gap: .1rem;
+  padding: .45rem .6rem .45rem 2.8rem;
+  position: relative;
+  border-bottom: 1px dashed rgba(0,0,0,.06);
+}
+.pub:last-child { border-bottom: none; }
+.yr {
+  position: absolute;
+  left: .3rem; top: .45rem;
+  font-family: var(--hand);
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--pink-hot);
+}
+.pub a {
+  font-family: var(--mono);
+  font-size: .78rem;
+  line-height: 1.4;
+  text-decoration: none;
+  color: var(--ink);
+}
+.pub a:hover { color: var(--pink-hot); text-decoration: underline wavy; }
+.meta {
+  font-size: .7rem;
+  color: var(--ink-light);
+  display: block;
+}
+.pub-rpt { padding-left: .6rem; border-left: 2px solid #d0a030; margin-bottom: .3rem; border-bottom: none; }
+.sub-label {
+  font-family: var(--hand);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #b08020;
+  margin: 1rem 0 .4rem;
+}
+
+/* Talks */
+.tk {
+  padding: .5rem 0;
+  border-bottom: 1px dashed rgba(0,0,0,.06);
+}
+.tk:last-child { border-bottom: none; }
+.tk-date {
+  font-family: var(--hand);
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--pink-hot);
+}
+.tk strong {
+  font-family: var(--mono);
+  font-size: .8rem;
+  font-weight: 400;
+  line-height: 1.4;
+  display: block;
+  margin: .1rem 0;
+}
+
+/* ================================================
+   ASCII CAT
+   ================================================ */
+
+/* ================================================
+   RESPONSIVE
+   ================================================ */
+@media (max-width: 1100px) {
+  .card { width: 280px; height: 280px; padding: 1.5rem 1.3rem 1.2rem; }
+  .card-label { font-size: 1.5rem; }
+  .card-items li { font-size: 1rem; }
+  .card-items li em { font-size: .85rem; }
+  .gallery-card.card-research { width: 320px; height: 340px; }
+  .profile-center { margin-left: 30px; }
+  .lily-1 { width: 200px; bottom: 35%; left: 10%; }
+}
+
+@media (max-width: 900px) {
+  .card {
+    width: 220px;
+    height: 220px;
+    padding: 1.1rem 1rem 1rem;
+  }
+  .card-label { font-size: 1.3rem; }
+  .card-items li { font-size: .9rem; }
+
+  .gallery-card.card-research { width: 260px; height: 280px; }
+  .profile-center { margin-left: 20px; }
+  .lily-1 { width: 160px; bottom: 38%; left: 8%; }
+
+  .photo-main { padding: 8px 8px 28px; }
+  .photo-main img { width: 150px; height: 175px; }
+  .photo-cat img { width: 90px; height: 90px; }
+  .photo-cat2 img { width: 80px; height: 80px; }
+  .name-card { max-width: 360px; }
+  .name-card h1 { font-size: 1.4rem; }
+  .about-text p { font-size: .72rem; }
+}
+
+@media (max-width: 700px) {
+  .scrapbook::before,
+  .scrapbook::after { display: none; }
+
+  .card {
+    width: 170px;
+    height: 170px;
+    padding: .8rem .7rem .7rem;
+  }
+  .card-label { font-size: 1.1rem; }
+  .card-items li { font-size: .78rem; }
+  .card-items li em { font-size: .68rem; }
+  .see-more { font-size: .82rem; }
+
+  .gallery-card.card-research { top: 2%; left: 2%; width: 190px; height: 210px; }
+  .card-papers   { top: 1%; right: 2%; }
+  .card-talks    { bottom: 8%; left: 2%; }
+  .card-awards   { top: 44%; right: 2%; width: 160px; height: 160px; transform: rotate(2deg); }
+  .card-fun      { width: 150px; height: 150px; bottom: 4%; right: 2%; }
+  .profile-center { margin-left: 10px; }
+  .lily-sticker { display: none; }
+
+  .photo-main { padding: 6px 6px 24px; }
+  .photo-main img { width: 120px; height: 140px; }
+  .photo-cat { margin-left: -15px; padding: 5px 5px 20px; }
+  .photo-cat img { width: 70px; height: 70px; }
+  .photo-cat2 { padding: 5px 5px 20px; }
+  .photo-cat2 img { width: 60px; height: 60px; }
+
+  .name-card { padding: .6rem 1rem; max-width: 300px; }
+  .name-card h1 { font-size: 1.2rem; }
+  .name-card .tagline { font-size: .9rem; }
+  .tag { font-size: .72rem; padding: .02rem .35rem; }
+  .about-text p { font-size: .68rem; }
+
+  .contact-side { flex-direction: row; flex-wrap: wrap; gap: .3rem; }
+  .contact-side a { font-size: .6rem; padding: .2rem .4rem; }
+
+  .panel { width: 95%; max-height: 85vh; }
+  .panel h2 { font-size: 1.2rem; padding-left: 1.2rem; }
+  .panel::before { left: 16px; }
+  .panel-body { padding-left: 1.2rem; }
+  .panel-note { padding-left: 1.2rem; }
+
+  .doodle { display: none; }
+  .tape-deco { display: none; }
+}
+
+@media (max-width: 480px) {
+  .card { width: 130px; height: 130px; }
+  .card-items li { font-size: .68rem; }
+  .card-label { font-size: .9rem; }
+
+  .gallery-card.card-research { width: 150px; height: 160px; top: 1%; left: 1%; }
+  .gallery-card .card-label { font-size: 1rem; }
+  .profile-center { margin-left: 0; }
+
+  .photo-main { padding: 5px 5px 20px; }
+  .photo-main img { width: 90px; height: 110px; }
+  .photo-cat { padding: 4px 4px 16px; margin-left: -10px; }
+  .photo-cat img { width: 45px; height: 45px; }
+  .photo-cat2 { padding: 4px 4px 16px; }
+  .photo-cat2 img { width: 40px; height: 40px; }
+  .name-card { max-width: 240px; padding: .5rem .8rem; }
+  .name-card h1 { font-size: .9rem; }
+  .name-card .tagline { font-size: .75rem; }
+  .about-text { display: none; }
+
+  .card-talks { bottom: 5%; left: 1%; }
+  .card-papers { top: 1%; right: 1%; }
+  .card-awards { width: 130px; height: 130px; top: 42%; right: 1%; }
+  .card-fun { width: 130px; height: 130px; bottom: 3%; right: 1%; }
+}

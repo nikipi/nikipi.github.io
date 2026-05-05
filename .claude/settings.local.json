@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bundle install:*)",
+      "Bash(ruby:*)",
+      "Bash(brew list:*)",
+      "Bash(rbenv versions:*)",
+      "Bash(rvm list:*)",
+      "Bash(export PATH=\"/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/4.0.0/bin:$PATH\")",
+      "Bash(gem install:*)",
+      "WebFetch(domain:nikipi.github.io)",
+      "Bash(python3:*)",
+      "Bash(open:*)",
+      "Bash(du -sh /Users/ypi/Downloads/nikipi.github.io-master 2/*)",
+      "Bash(ls:*)",
+      "Bash(git init:*)",
+      "Bash(git -C \"/Users/ypi/Downloads/nikipi.github.io-master 2\" config --global user.name)",
+      "Bash(git -C \"/Users/ypi/Downloads/nikipi.github.io-master 2\" config --global user.email)",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}
