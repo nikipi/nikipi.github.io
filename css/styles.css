@@ -664,8 +664,8 @@ img { max-width: 100%; height: auto; display: block; }
   padding-top: .5rem;
 }
 .about-text p {
-  font-size: .8rem;
-  line-height: 1.55;
+  font-size: .92rem;
+  line-height: 1.6;
   margin-bottom: .45rem;
   color: var(--ink);
 }
