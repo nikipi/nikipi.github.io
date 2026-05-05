@@ -1322,75 +1322,185 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 @media (max-width: 700px) {
+  /* Allow scrolling on mobile */
+  html, body {
+    height: auto;
+    overflow: auto;
+  }
+
+  /* Switch to vertical stacked layout */
+  .scrapbook {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+  }
+
+  /* Hide notebook decorations */
   .scrapbook::before,
   .scrapbook::after { display: none; }
 
+  /* Hide decorative elements */
+  .doodle,
+  .tape-deco,
+  .paperclip,
+  .stamp,
+  .pen-border,
+  .coffee-ring,
+  .ink-blot,
+  .scribble,
+  .lily-sticker,
+  .journal-date { display: none; }
+
+  /* === Card ordering for mobile === */
+  .profile-center          { order: 1; }
+  .card-papers             { order: 2; }
+  .card-awards             { order: 3; }
+  .card-talks              { order: 4; }
+  .gallery-card.card-research { order: 5; }
+  .card-fun                { order: 6; }
+
+  /* === All cards — static, full-width stacking === */
   .card {
-    width: 170px;
-    height: 170px;
-    padding: .8rem .7rem .7rem;
+    position: static;
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    min-height: 0;
+    transform: none;
+    margin: 0 auto;
+    padding: 1.4rem 1.3rem 1.2rem;
   }
-  .card-label { font-size: 1.1rem; }
-  .card-items li { font-size: .78rem; }
-  .card-items li em { font-size: .68rem; }
-  .see-more { font-size: .82rem; }
+  .card-label { font-size: 1.3rem; }
+  .card-items {
+    overflow: visible;
+  }
+  .card-items li {
+    font-size: .95rem;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+  }
+  .card-items li em { font-size: .8rem; }
+  .see-more { font-size: .95rem; }
 
-  .gallery-card.card-research { top: 2%; left: 2%; width: 190px; height: 210px; }
-  .card-papers   { top: 1%; right: 2%; }
-  .card-talks    { bottom: 8%; left: 2%; }
-  .card-awards   { top: 44%; right: 2%; width: 160px; height: 160px; transform: rotate(2deg); }
-  .card-fun      { width: 150px; height: 150px; bottom: 4%; right: 2%; }
-  .profile-center { margin-left: 10px; }
-  .lily-sticker { display: none; }
+  /* Gallery card */
+  .gallery-card.card-research {
+    position: static;
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    transform: none;
+    margin: 0 auto;
+    padding: 1.1rem 1rem .8rem;
+  }
+  .gallery-slideshow {
+    height: 220px;
+    flex: none;
+  }
+  /* Show nav arrows on mobile (no hover) */
+  .gallery-prev,
+  .gallery-next {
+    opacity: .7;
+  }
 
-  .photo-main { padding: 6px 6px 24px; }
-  .photo-main img { width: 120px; height: 140px; }
-  .photo-cat { margin-left: -15px; padding: 5px 5px 20px; }
-  .photo-cat img { width: 70px; height: 70px; }
-  .photo-cat2 { padding: 5px 5px 20px; }
-  .photo-cat2 img { width: 60px; height: 60px; }
+  /* Awards card */
+  .card-awards {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+  }
 
-  .name-card { padding: .6rem 1rem; max-width: 300px; }
-  .name-card h1 { font-size: 1.2rem; }
-  .name-card .tagline { font-size: .9rem; }
-  .tag { font-size: .72rem; padding: .02rem .35rem; }
-  .about-text p { font-size: .68rem; }
+  /* Fun facts card */
+  .card-fun {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    padding: 1.2rem 1.1rem 1rem;
+  }
 
-  .contact-side { flex-direction: row; flex-wrap: wrap; gap: .3rem; }
-  .contact-side a { font-size: .6rem; padding: .2rem .4rem; }
+  /* === Profile center === */
+  .profile-center {
+    position: static;
+    margin-left: 0;
+    width: 100%;
+    max-width: 340px;
+  }
 
+  /* Stack photo + contact vertically */
+  .profile-top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .photos-row {
+    justify-content: center;
+  }
+
+  .photo-main { padding: 8px 8px 28px; }
+  .photo-main img { width: 160px; height: 190px; }
+  .photo-cat { margin-left: -20px; }
+  .photo-cat img { width: 100px; height: 100px; }
+  .photo-cat2 img { width: 90px; height: 90px; }
+
+  .name-card {
+    max-width: 100%;
+    width: 100%;
+  }
+  .name-card h1 { font-size: 1.3rem; }
+  .name-card .tagline { font-size: .95rem; }
+  .tag { font-size: .78rem; padding: .05rem .4rem; }
+  .about-text p { font-size: .75rem; }
+
+  .contact-side {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .3rem;
+  }
+  .contact-side a { font-size: .72rem; padding: .25rem .55rem; }
+
+  /* Panels */
   .panel { width: 95%; max-height: 85vh; }
   .panel h2 { font-size: 1.2rem; padding-left: 1.2rem; }
   .panel::before { left: 16px; }
   .panel-body { padding-left: 1.2rem; }
   .panel-note { padding-left: 1.2rem; }
-
-  .doodle { display: none; }
-  .tape-deco { display: none; }
 }
 
 @media (max-width: 480px) {
-  .card { width: 130px; height: 130px; }
-  .card-items li { font-size: .68rem; }
-  .card-label { font-size: .9rem; }
+  .scrapbook {
+    padding: 1rem .5rem;
+    gap: .8rem;
+  }
 
-  .gallery-card.card-research { width: 150px; height: 160px; top: 1%; left: 1%; }
-  .gallery-card .card-label { font-size: 1rem; }
-  .profile-center { margin-left: 0; }
+  .card,
+  .gallery-card.card-research,
+  .card-awards,
+  .card-fun {
+    max-width: 300px;
+  }
 
-  .photo-main { padding: 5px 5px 20px; }
-  .photo-main img { width: 90px; height: 110px; }
-  .photo-cat { padding: 4px 4px 16px; margin-left: -10px; }
-  .photo-cat img { width: 45px; height: 45px; }
-  .photo-cat2 { padding: 4px 4px 16px; }
-  .photo-cat2 img { width: 40px; height: 40px; }
-  .name-card { max-width: 240px; padding: .5rem .8rem; }
-  .name-card h1 { font-size: .9rem; }
-  .name-card .tagline { font-size: .75rem; }
-  .about-text { display: none; }
+  .profile-center {
+    max-width: 300px;
+  }
 
-  .card-talks { bottom: 5%; left: 1%; }
-  .card-papers { top: 1%; right: 1%; }
-  .card-awards { width: 130px; height: 130px; top: 42%; right: 1%; }
-  .card-fun { width: 130px; height: 130px; bottom: 3%; right: 1%; }
+  .photo-main img { width: 130px; height: 155px; }
+  .photo-cat img { width: 80px; height: 80px; }
+  .photo-cat2 img { width: 70px; height: 70px; }
+
+  .name-card { padding: .6rem .9rem; }
+  .name-card h1 { font-size: 1.1rem; }
+  .name-card .tagline { font-size: .85rem; }
+  .about-text p { font-size: .7rem; }
+
+  .card-label { font-size: 1.1rem; }
+  .card-items li { font-size: .88rem; }
+
+  .gallery-slideshow { height: 180px; }
 }
